@@ -1,8 +1,8 @@
 # House Robber: DP Invariants & Constant-Space Optimization (Part 1 of 2) 🏠
 
 **The Problem**:
-Each house contains some money. Robbing two adjacent houses triggers the alarm!
-Return the **maximum total from nonadjacent houses**.
+Given a list of houses, each containing some money. Robbing two adjacent houses triggers the alarm and you get caught!
+Return the **maximum total you can rob from the houses without getting caught**.
 
 For `[2, 7, 9, 3, 1]`, the answer is **12**: take `2 + 9 + 1`.
 
@@ -51,7 +51,7 @@ The caller's list stays unchanged.
 ### 📊 Complexity
 
 - **Original Table**: O(n) time, O(n) auxiliary space.
-- **Rolling Totals**: O(n) time, **O(1) auxiliary space**.
+- **Rolling Totals**: O(n) time, improved **O(1) auxiliary space**.
 
 Linear time is worst-case optimal: an unread house could change the answer. These bounds use the usual constant-cost arithmetic model for the problem's bounded values.
 
@@ -62,7 +62,5 @@ Linear time is worst-case optimal: an unread house could change the answer. Thes
 In Part 2, I'll compare:
 1. **Prefix DP Table**: Explicit states that can support a later reconstruction step.
 2. **Top-Down Memoization**: The same decision modeled recursively, with a cache scoped to each call.
-
-I'll also cover how all three implementations were checked against an independent subset oracle.
 
 #LearningInPublic #Python #Algorithms #DataStructures #DynamicProgramming #LeetCode #CodingInterview #SoftwareEngineering
